@@ -26,6 +26,7 @@ typedef struct {
 
 const uint64_t functionDefMutableData = 0;
 const uint64_t biasedInstanceId = 0;
+const uint64_t tableReferenceBias = 0;
 
 const uint64_t typeId0 = 0;
 extern wavm_ret_int32_t (functionDef0) (void*);
@@ -40,11 +41,16 @@ const uint64_t functionDefMutableDatas3 = 0;
 #define wavm_exported_function_call_9 functionDef3
 uint32_t table0_length = 10;
 uintptr_t table0[10] = {
-  0, 0, 0, 0, 
-  0, 0, 0, ((uintptr_t) (functionDef0)), 
+  0, 0, 0, 0,
+  0, 0, 0, ((uintptr_t) (functionDef0)),
   0, ((uintptr_t) (functionDef1))
 };
 uintptr_t* tableOffset0 = table0;
 #define TABLE0_DEFINED 1
+
+void* init() {
+  table0[7] = table0[7] - ((uintptr_t) &tableReferenceBias) - 0x20;
+  table0[9] = table0[9] - ((uintptr_t) &tableReferenceBias) - 0x20;
+}
 
 #endif /* elem_7_GLUE_H */

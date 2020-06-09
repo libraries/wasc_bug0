@@ -1,5 +1,5 @@
 ```sh
-$ gcc -g -o elem_7 elem_7.c elem_7.o elem_7_abi/spectest_runtime.S
+$ gcc -g -o elem_7 elem_7.c elem_7.o
 $ ./elem_7
 # Segmentation fault (core dumped)
 ```
@@ -24,7 +24,7 @@ Dump of assembler code for function functionDef2:
    0x0000555555554a4e <+62>:	add    $0x20,%rcx
    0x0000555555554a52 <+66>:	callq  *%rcx
    0x0000555555554a54 <+68>:	pop    %rbp
-   0x0000555555554a55 <+69>:	retq   
+   0x0000555555554a55 <+69>:	retq
    0x0000555555554a56 <+70>:	add    $0xfffffffffffff008,%rdx
    0x0000555555554a5d <+77>:	shr    $0x3,%rdx
    0x0000555555554a61 <+81>:	movabs $0x555555554ba8,%r8
